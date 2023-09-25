@@ -7,6 +7,7 @@
 class CHARACTER_SHEET_API SkillStatsList
 {
 public:
+    SkillStatsList();
 	SkillStatsList(CoreStatsList coreStatsList);
 
     unsigned char defaultValue = 5;

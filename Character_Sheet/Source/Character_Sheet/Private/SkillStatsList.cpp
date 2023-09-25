@@ -1,5 +1,9 @@
 #include "SkillStatsList.h"
 
+SkillStatsList::SkillStatsList()
+{
+}
+
 SkillStatsList::SkillStatsList(CoreStatsList coreStatsList)
 {
 	SkillStat TwoHandedSwords("Big Swords", coreStatsList.Strength, defaultValue);

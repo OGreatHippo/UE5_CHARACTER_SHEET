@@ -2,6 +2,7 @@
 
 #include "CoreMinimal.h"
 #include "CoreStatsList.h"
+#include "SkillStatsList.h"
 
 class CHARACTER_SHEET_API Race
 {
