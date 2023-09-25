@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "MyCharacter.generated.h"
+#include "CharacterSheet.h"
 
 UCLASS()
 class CHARACTER_SHEET_API AMyCharacter : public ACharacter
@@ -26,4 +27,8 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+
+private:
+	CharacterSheet characterSheet;
+	void SetCoreStatData();
 };

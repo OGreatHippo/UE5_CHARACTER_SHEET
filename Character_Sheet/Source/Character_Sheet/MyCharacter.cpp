@@ -32,3 +32,21 @@ void AMyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 
 }
 
+void AMyCharacter::SetCoreStatData()
+{
+    if (characterSheet.raceAttributes.raceMap.Contains(characterSheet.selectedRace))
+    {   
+        const Race& attributes = characterSheet.raceAttributes.raceMap[characterSheet.selectedRace];
+
+        // Modify the stats using the attributes
+        characterSheet.statsList.Strength.level += attributes.stats.Strength.level;
+        characterSheet.statsList.Constitution.level += attributes.stats.Constitution.level;
+        characterSheet.statsList.Dexterity.level += attributes.stats.Dexterity.level;
+        characterSheet.statsList.Intelligence.level += attributes.stats.Intelligence.level;
+        characterSheet.statsList.Wisdom.level += attributes.stats.Wisdom.level;
+        characterSheet.statsList.Charisma.level += attributes.stats.Charisma.level;
+        characterSheet.statsList.Luck.level += attributes.stats.Luck.level;
+    }
+    
+}
+
