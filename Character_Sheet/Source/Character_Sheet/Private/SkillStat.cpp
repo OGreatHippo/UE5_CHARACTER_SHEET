@@ -11,5 +11,15 @@ SkillStat::SkillStat(std::string _description, CoreStat _stat, unsigned char _le
     level = _level;
     maxXP = 5;
 
-    _stat.skills++;
+    _stat.IncreaseSkillsCount();
+}
+
+CoreStat SkillStat::GetSkillStat()
+{
+    return stat;
+}
+
+CoreStat SkillStat::SetSkillStat(CoreStat _stat)
+{
+    stat = _stat;
 }

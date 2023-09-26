@@ -2,6 +2,5 @@
 
 CharacterSheet::CharacterSheet()
 {
-	
 }
 

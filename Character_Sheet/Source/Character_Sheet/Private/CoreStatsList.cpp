@@ -2,7 +2,7 @@
 
 CoreStatsList::CoreStatsList()
 {
-	CoreStat Strength("How strong you are.", defaultValue);
+    CoreStat Strength("How strong you are.", defaultValue);
     CoreStat Constitution("How healthy you are.", defaultValue);
     CoreStat Dexterity("How agile you are.", defaultValue);
     CoreStat Intelligence("How intelligent you are.", defaultValue);

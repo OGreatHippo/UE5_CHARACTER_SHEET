@@ -1,6 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "MyCharacter.h"
 
 // Sets default values
@@ -36,16 +33,16 @@ void AMyCharacter::SetCoreStatData()
 {
     if (characterSheet.raceAttributes.raceMap.Contains(characterSheet.selectedRace))
     {   
-        const Race& attributes = characterSheet.raceAttributes.raceMap[characterSheet.selectedRace];
+        Race& attributes = characterSheet.raceAttributes.raceMap[characterSheet.selectedRace];
 
         // Modify the stats using the attributes
-        characterSheet.statsList.Strength.level += attributes.stats.Strength.level;
-        characterSheet.statsList.Constitution.level += attributes.stats.Constitution.level;
-        characterSheet.statsList.Dexterity.level += attributes.stats.Dexterity.level;
-        characterSheet.statsList.Intelligence.level += attributes.stats.Intelligence.level;
-        characterSheet.statsList.Wisdom.level += attributes.stats.Wisdom.level;
-        characterSheet.statsList.Charisma.level += attributes.stats.Charisma.level;
-        characterSheet.statsList.Luck.level += attributes.stats.Luck.level;
+        characterSheet.statsList.Strength.SetStatLevel(attributes.stats.Strength.GetStatLevel());
+        characterSheet.statsList.Constitution.SetStatLevel(attributes.stats.Constitution.GetStatLevel());
+        characterSheet.statsList.Dexterity.SetStatLevel(attributes.stats.Dexterity.GetStatLevel());
+        characterSheet.statsList.Intelligence.SetStatLevel(attributes.stats.Intelligence.GetStatLevel());
+        characterSheet.statsList.Wisdom.SetStatLevel(attributes.stats.Wisdom.GetStatLevel());
+        characterSheet.statsList.Charisma.SetStatLevel(attributes.stats.Charisma.GetStatLevel());
+        characterSheet.statsList.Luck.SetStatLevel(attributes.stats.Luck.GetStatLevel());
     }
     
 }

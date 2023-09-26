@@ -8,8 +8,6 @@ class CHARACTER_SHEET_API CoreStatsList
 public:
     CoreStatsList();
 
-    unsigned char defaultValue = 5;
-
     CoreStat Strength;
     CoreStat Constitution;
     CoreStat Dexterity;
@@ -17,4 +15,7 @@ public:
     CoreStat Wisdom;
     CoreStat Charisma;
     CoreStat Luck;
+
+private:
+    unsigned char defaultValue = 5;
 };

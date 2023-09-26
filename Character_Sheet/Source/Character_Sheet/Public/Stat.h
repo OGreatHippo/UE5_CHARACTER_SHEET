@@ -4,7 +4,7 @@
 
 class CHARACTER_SHEET_API Stat
 {
-public:
+protected:
 	std::string description;
 	unsigned char level;
 	unsigned int currentXP;

@@ -3,6 +3,14 @@
 #include "CoreMinimal.h"
 #include "Race.h"
 
+enum class RaceChoice
+{
+	Human,
+	Elf,
+	Dwarf,
+	Orc
+};
+
 class CHARACTER_SHEET_API RaceAttributes
 {
 public:
@@ -14,12 +22,4 @@ public:
 	TMap<RaceChoice, Race> raceMap;
 
 	RaceAttributes();
-};
-
-enum class RaceChoice
-{
-	Human,
-	Elf,
-	Dwarf,
-	Orc
 };

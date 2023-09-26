@@ -3,16 +3,16 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "CharacterSheet.h"
-#include "MyCharacter.generated.h"
+#include "NPCCharacter.generated.h"
 
 UCLASS()
-class CHARACTER_SHEET_API AMyCharacter : public ACharacter
+class CHARACTER_SHEET_API ANPCCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
 public:
 	// Sets default values for this character's properties
-	AMyCharacter();
+	ANPCCharacter();
 
 protected:
 	// Called when the game starts or when spawned
@@ -28,5 +28,4 @@ public:
 
 private:
 	CharacterSheet characterSheet;
-	void SetCoreStatData();
 };

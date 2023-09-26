@@ -10,8 +10,6 @@ public:
     SkillStatsList();
 	SkillStatsList(CoreStatsList coreStatsList);
 
-    unsigned char defaultValue = 5;
-
     //Strength
     SkillStat TwoHandedSwords;
     SkillStat TwoHandedMaces;
@@ -28,4 +26,7 @@ public:
     //Charisma
 
     //Luck
+
+private:
+    unsigned char defaultValue = 5;
 };
