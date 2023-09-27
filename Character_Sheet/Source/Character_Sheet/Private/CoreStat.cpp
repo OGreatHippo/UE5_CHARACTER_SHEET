@@ -4,10 +4,9 @@ CoreStat::CoreStat()
 {
 }
 
-CoreStat::CoreStat(std::string _description, unsigned char _level)
+CoreStat::CoreStat(std::string _description)
 {
 	description = _description;
-	level = _level;
 }
 
 void CoreStat::IncreaseSkillsCount()
@@ -18,16 +17,6 @@ void CoreStat::IncreaseSkillsCount()
 unsigned char CoreStat::GetSkillsCount()
 {
 	return skills;
-}
-
-unsigned char CoreStat::GetStatLevel()
-{
-	return level;
-}
-
-void CoreStat::SetStatLevel(unsigned char _value)
-{
-	level = _value;
 }
 
 void CoreStat::AddXP(unsigned int _xp)

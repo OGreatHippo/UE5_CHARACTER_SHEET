@@ -36,13 +36,13 @@ void AMyCharacter::SetCoreStatData()
         Race& attributes = characterSheet.raceAttributes.raceMap[characterSheet.selectedRace];
 
         // Modify the stats using the attributes
-        characterSheet.statsList.Strength.SetStatLevel(attributes.stats.Strength.GetStatLevel());
-        characterSheet.statsList.Constitution.SetStatLevel(attributes.stats.Constitution.GetStatLevel());
-        characterSheet.statsList.Dexterity.SetStatLevel(attributes.stats.Dexterity.GetStatLevel());
-        characterSheet.statsList.Intelligence.SetStatLevel(attributes.stats.Intelligence.GetStatLevel());
-        characterSheet.statsList.Wisdom.SetStatLevel(attributes.stats.Wisdom.GetStatLevel());
-        characterSheet.statsList.Charisma.SetStatLevel(attributes.stats.Charisma.GetStatLevel());
-        characterSheet.statsList.Luck.SetStatLevel(attributes.stats.Luck.GetStatLevel());
+        characterSheet.statsList.Strength.IncreaseLevel(attributes.stats.Strength.GetLevel());
+        characterSheet.statsList.Constitution.IncreaseLevel(attributes.stats.Constitution.GetLevel());
+        characterSheet.statsList.Dexterity.IncreaseLevel(attributes.stats.Dexterity.GetLevel());
+        characterSheet.statsList.Intelligence.IncreaseLevel(attributes.stats.Intelligence.GetLevel());
+        characterSheet.statsList.Wisdom.IncreaseLevel(attributes.stats.Wisdom.GetLevel());
+        characterSheet.statsList.Charisma.IncreaseLevel(attributes.stats.Charisma.GetLevel());
+        characterSheet.statsList.Luck.IncreaseLevel(attributes.stats.Luck.GetLevel());
     }
     
 }

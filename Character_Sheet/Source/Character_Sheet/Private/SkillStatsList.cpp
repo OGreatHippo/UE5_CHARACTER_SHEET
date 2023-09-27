@@ -1,13 +1,23 @@
 #include "SkillStatsList.h"
 
-SkillStatsList::SkillStatsList()
-{
-}
-
 SkillStatsList::SkillStatsList(CoreStatsList coreStatsList)
-{
-	SkillStat TwoHandedSwords("Big Swords", coreStatsList.Strength, defaultValue);
-	SkillStat TwoHandedMaces("Big Maces", coreStatsList.Strength, defaultValue);
-	SkillStat TwoHandedAxes("Big Axes", coreStatsList.Strength, defaultValue);
+	:
+	//Strength
+	TwoHandedSwords("Big Swords", coreStatsList.Strength),
+	TwoHandedMaces("Big Maces", coreStatsList.Strength),
+	TwoHandedAxes("Big Axes", coreStatsList.Strength)
+
+	//Constitution
+
+	//Dexterity
+
+	//Intelligence
+
+	//Wisdom
+
+	//Charisma
+
+	//Luck
+{ 
 }
 

@@ -15,7 +15,4 @@ public:
     CoreStat Wisdom;
     CoreStat Charisma;
     CoreStat Luck;
-
-private:
-    unsigned char defaultValue = 5;
 };

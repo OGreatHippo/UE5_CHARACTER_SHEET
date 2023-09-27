@@ -7,7 +7,6 @@
 class CHARACTER_SHEET_API SkillStatsList
 {
 public:
-    SkillStatsList();
 	SkillStatsList(CoreStatsList coreStatsList);
 
     //Strength
@@ -26,7 +25,4 @@ public:
     //Charisma
 
     //Luck
-
-private:
-    unsigned char defaultValue = 5;
 };

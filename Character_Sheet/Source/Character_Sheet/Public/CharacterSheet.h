@@ -10,9 +10,9 @@ public:
 	
 	std::string characterName = "default";
 	unsigned char level = 1;
-	RaceChoice selectedRace;
+	RaceChoice selectedRace = RaceChoice::Human;
 	RaceAttributes raceAttributes;
-	bool isMale;
+	bool isMale = true;
 	CoreStatsList statsList;
 	SkillStatsList skillsList;
 };

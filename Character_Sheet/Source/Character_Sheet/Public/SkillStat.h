@@ -8,10 +8,10 @@ class CHARACTER_SHEET_API SkillStat : public Stat
 {
 public:
 	SkillStat();
-	SkillStat(std::string _description, CoreStat _stat, unsigned char _level);
+	SkillStat(std::string _description, CoreStat _stat);
 
 	CoreStat GetSkillStat();
-	CoreStat SetSkillStat(CoreStat _stat);
+	void SetSkillStat(CoreStat _stat);
 
 private:
 	CoreStat stat;
