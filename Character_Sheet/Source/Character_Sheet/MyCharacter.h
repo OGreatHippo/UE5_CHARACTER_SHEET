@@ -27,4 +27,7 @@ public:
 
 	CharacterSheet characterSheet;
 	void SetCoreStatData();
+
+private:
+	void OpenCharacterSheet();
 };

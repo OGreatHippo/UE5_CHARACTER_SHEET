@@ -15,6 +15,11 @@ void AMyCharacter::BeginPlay()
 	
 }
 
+void AMyCharacter::OpenCharacterSheet()
+{
+
+}
+
 // Called every frame
 void AMyCharacter::Tick(float DeltaTime)
 {
@@ -26,6 +31,8 @@ void AMyCharacter::Tick(float DeltaTime)
 void AMyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
+
+    PlayerInputComponent->BindAction(TEXT("Character Sheet"), IE_Pressed, this, &AMyCharacter::OpenCharacterSheet);
 
 }
 
