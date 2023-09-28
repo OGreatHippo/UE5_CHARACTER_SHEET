@@ -3,6 +3,7 @@
 #include "CoreMinimal.h"
 #include "Race.h"
 
+UENUM()
 enum class RaceChoice
 {
 	Human,

@@ -1,10 +1,10 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "MyCharacter.h"
+#include "NPCCharacter.h"
 
 // Sets default values
-AMyCharacter::AMyCharacter()
+ANPCCharacter::ANPCCharacter()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
@@ -12,29 +12,30 @@ AMyCharacter::AMyCharacter()
 }
 
 // Called when the game starts or when spawned
-void AMyCharacter::BeginPlay()
+void ANPCCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-    AMyCharacter::SetCharacterSheetAttributeData();
+
+    characterSheet.selectedRace = raceChoice;
+
+	ANPCCharacter::SetCharacterSheetAttributeData();
 }
 
 // Called every frame
-void AMyCharacter::Tick(float DeltaTime)
+void ANPCCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
 }
 
 // Called to bind functionality to input
-void AMyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+void ANPCCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
-	PlayerInputComponent->BindAction(TEXT("CharacterSheet"), IE_Pressed, this, &AMyCharacter::OpenCharacterSheet);
-
 }
 
-void AMyCharacter::SetCharacterSheetAttributeData()
+void ANPCCharacter::SetCharacterSheetAttributeData()
 {
     if (characterSheet.raceAttributes.raceMap.Contains(characterSheet.selectedRace))
     {
@@ -48,10 +49,13 @@ void AMyCharacter::SetCharacterSheetAttributeData()
         characterSheet.statsList.Charisma.IncreaseLevel(attributes.stats.Charisma.GetLevel());
         characterSheet.statsList.Luck.IncreaseLevel(attributes.stats.Luck.GetLevel());
     }
-}
 
-void AMyCharacter::OpenCharacterSheet()
-{
-
+    CharacterAttributes.strength = characterSheet.statsList.Strength.GetLevel();
+    CharacterAttributes.constitution = characterSheet.statsList.Constitution.GetLevel();
+    CharacterAttributes.dexterity = characterSheet.statsList.Dexterity.GetLevel();
+    CharacterAttributes.intelligence = characterSheet.statsList.Intelligence.GetLevel();
+    CharacterAttributes.wisdom = characterSheet.statsList.Wisdom.GetLevel();
+    CharacterAttributes.charisma = characterSheet.statsList.Charisma.GetLevel();
+    CharacterAttributes.luck = characterSheet.statsList.Luck.GetLevel();
 }
 
