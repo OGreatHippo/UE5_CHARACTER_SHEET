@@ -19,5 +19,5 @@ public:
 	RaceAttributes raceAttributes;
 	bool isMale = true;
 	CoreStatsList statsList;
-	SkillStatsList skillsList;
+	SkillStatsList skillsList(CoreStatsList coreStats);
 };

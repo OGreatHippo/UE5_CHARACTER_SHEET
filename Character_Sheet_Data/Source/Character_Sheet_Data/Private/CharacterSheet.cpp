@@ -5,5 +5,11 @@
 
 CharacterSheet::CharacterSheet()
 {
+	
+}
+
+SkillStatsList CharacterSheet::skillsList(CoreStatsList coreStats)
+{
+	return coreStats = statsList;
 }
 

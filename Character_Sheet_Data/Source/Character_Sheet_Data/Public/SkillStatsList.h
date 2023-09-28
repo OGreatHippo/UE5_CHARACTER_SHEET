@@ -7,7 +7,6 @@
 class CHARACTER_SHEET_DATA_API SkillStatsList
 {
 public:
-    SkillStatsList();
 	SkillStatsList(CoreStatsList coreStatsList);
 
     //Strength

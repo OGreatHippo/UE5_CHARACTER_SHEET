@@ -28,7 +28,8 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 private:
-	void OpenCharacterSheet();
-
 	CharacterSheet characterSheet;
+
+	void SetCharacterSheetAttributeData();
+	void OpenCharacterSheet();
 };

@@ -34,6 +34,22 @@ void AMyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 
 }
 
+void AMyCharacter::SetCharacterSheetAttributeData()
+{
+    if (characterSheet.raceAttributes.raceMap.Contains(characterSheet.selectedRace))
+    {
+        Race attributes = characterSheet.raceAttributes.raceMap[characterSheet.selectedRace];
+
+        characterSheet.statsList.Strength.IncreaseLevel(attributes.stats.Strength.GetLevel());
+        characterSheet.statsList.Constitution.IncreaseLevel(attributes.stats.Constitution.GetLevel());
+        characterSheet.statsList.Dexterity.IncreaseLevel(attributes.stats.Dexterity.GetLevel());
+        characterSheet.statsList.Intelligence.IncreaseLevel(attributes.stats.Intelligence.GetLevel());
+        characterSheet.statsList.Wisdom.IncreaseLevel(attributes.stats.Wisdom.GetLevel());
+        characterSheet.statsList.Charisma.IncreaseLevel(attributes.stats.Charisma.GetLevel());
+        characterSheet.statsList.Luck.IncreaseLevel(attributes.stats.Luck.GetLevel());
+    }
+}
+
 void AMyCharacter::OpenCharacterSheet()
 {
 

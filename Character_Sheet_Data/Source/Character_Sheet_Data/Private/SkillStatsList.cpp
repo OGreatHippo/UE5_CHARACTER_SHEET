@@ -1,9 +1,5 @@
 #include "SkillStatsList.h"
 
-SkillStatsList::SkillStatsList()
-{
-}
-
 SkillStatsList::SkillStatsList(CoreStatsList coreStatsList)
 	:
 	//Strength
