@@ -8,20 +8,34 @@ AMyCharacter::AMyCharacter()
 
     CharacterHUDClass = nullptr;
     CharacterHUD = nullptr;
+
+    test = 100;
+
+    UE_LOG(LogTemp, Warning, TEXT("The integer value is: %d"), test);
 }
 
 // Called when the game starts or when spawned
 void AMyCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-    AMyCharacter::SetCharacterSheetAttributeData();
+    //AMyCharacter::SetCharacterSheetAttributeData();
 
     if (IsLocallyControlled() && CharacterHUDClass)
     {
         AMyPlayerController* inputController = GetController<AMyPlayerController>();
         check(inputController);
+        if (!inputController)
+        {
+            UE_LOG(LogTemp, Error, TEXT("AMyCharacter::BeginPlay - InputController is null."));
+            return;
+        }
         CharacterHUD = CreateWidget<UCharacterDataHUD>(inputController, CharacterHUDClass);
         check(CharacterHUD);
+        if (!CharacterHUD)
+        {
+            UE_LOG(LogTemp, Error, TEXT("AMyCharacter::BeginPlay - Failed to create CharacterHUD."));
+            return;
+        }
         CharacterHUD->AddToPlayerScreen();
         //Add character sheet data here
     }
