@@ -64,7 +64,6 @@ void AMyCharacter::OpenCharacterSheet()
     if (CharacterHUD)
     {
         CharacterHUD->SetVisibility(ESlateVisibility::Visible);
-        UE_LOG(LogTemp, Warning, TEXT("Sheet open"));
     }
 }
 
@@ -73,18 +72,13 @@ void AMyCharacter::CloseCharacterSheet()
     if (CharacterHUD)
     {  
         CharacterHUD->SetVisibility(ESlateVisibility::Hidden);
-        UE_LOG(LogTemp, Warning, TEXT("Sheet closed"));
     }
 }
 
 void AMyCharacter::ShowCharacterSheet()
 {
-    UE_LOG(LogTemp, Warning, TEXT("fuck"));
-
     if (CharacterHUD)
     {
-        UE_LOG(LogTemp, Warning, TEXT("this"));
-
         characterSheetOpen = !characterSheetOpen;
 
         if (characterSheetOpen)

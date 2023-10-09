@@ -11,5 +11,6 @@ class CHARACTER_SHEET_DATA_API UCharacterDataHUD : public UUserWidget
 	
 
 public:
-	
+	UPROPERTY(EditAnywhere, meta = (BindWidget))
+		class UCanvasPanel* CharacterSheet;
 };
