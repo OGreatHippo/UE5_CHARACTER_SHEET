@@ -1,6 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "MyCharacter.h"
 
 // Sets default values
@@ -9,6 +6,8 @@ AMyCharacter::AMyCharacter()
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+    CharacterHUDClass = nullptr;
+    CharacterHUD = nullptr;
 }
 
 // Called when the game starts or when spawned
@@ -16,6 +15,16 @@ void AMyCharacter::BeginPlay()
 {
 	Super::BeginPlay();
     AMyCharacter::SetCharacterSheetAttributeData();
+
+    if (IsLocallyControlled() && CharacterHUDClass)
+    {
+        AMyPlayerController* inputController = GetController<AMyPlayerController>();
+        check(inputController);
+        CharacterHUD = CreateWidget<UCharacterDataHUD>(inputController, CharacterHUDClass);
+        check(CharacterHUD);
+        CharacterHUD->AddToPlayerScreen();
+        //Add character sheet data here
+    }
 }
 
 // Called every frame
@@ -30,7 +39,7 @@ void AMyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
-	PlayerInputComponent->BindAction(TEXT("CharacterSheet"), IE_Pressed, this, &AMyCharacter::OpenCharacterSheet);
+	PlayerInputComponent->BindAction(TEXT("CharacterSheet"), IE_Pressed, this, &AMyCharacter::ShowCharacterSheet);
 
 }
 
@@ -52,6 +61,41 @@ void AMyCharacter::SetCharacterSheetAttributeData()
 
 void AMyCharacter::OpenCharacterSheet()
 {
+    if (CharacterHUD)
+    {
+        CharacterHUD->SetVisibility(ESlateVisibility::Visible);
+        UE_LOG(LogTemp, Warning, TEXT("Sheet open"));
+    }
+}
 
+void AMyCharacter::CloseCharacterSheet()
+{
+    if (CharacterHUD)
+    {  
+        CharacterHUD->SetVisibility(ESlateVisibility::Hidden);
+        UE_LOG(LogTemp, Warning, TEXT("Sheet closed"));
+    }
+}
+
+void AMyCharacter::ShowCharacterSheet()
+{
+    UE_LOG(LogTemp, Warning, TEXT("fuck"));
+
+    if (CharacterHUD)
+    {
+        UE_LOG(LogTemp, Warning, TEXT("this"));
+
+        characterSheetOpen = !characterSheetOpen;
+
+        if (characterSheetOpen)
+        {
+            OpenCharacterSheet();
+        }
+
+        else
+        {
+            CloseCharacterSheet();
+        }
+    }
 }
 

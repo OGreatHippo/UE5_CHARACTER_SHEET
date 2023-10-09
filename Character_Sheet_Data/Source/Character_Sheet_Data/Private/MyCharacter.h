@@ -1,9 +1,9 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "MyPlayerController.h"
+#include "CharacterDataHUD.h"
 #include "CharacterSheet.h"
 #include "MyCharacter.generated.h"
 
@@ -15,6 +15,13 @@ class AMyCharacter : public ACharacter
 public:
 	// Sets default values for this character's properties
 	AMyCharacter();
+
+	//HUD
+	UPROPERTY(EditAnywhere)
+		TSubclassOf<class UCharacterDataHUD> CharacterHUDClass;
+
+	UPROPERTY()
+		class UCharacterDataHUD* CharacterHUD;
 
 protected:
 	// Called when the game starts or when spawned
@@ -30,6 +37,10 @@ public:
 private:
 	CharacterSheet characterSheet;
 
+	bool characterSheetOpen = false;
+
 	void SetCharacterSheetAttributeData();
 	void OpenCharacterSheet();
+	void CloseCharacterSheet();
+	void ShowCharacterSheet();
 };
