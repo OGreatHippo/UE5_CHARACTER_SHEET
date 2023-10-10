@@ -23,7 +23,6 @@ public:
 	UPROPERTY()
 		class UCharacterDataHUD* CharacterHUD;
 
-	int test = 0;
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -44,4 +43,6 @@ private:
 	void OpenCharacterSheet();
 	void CloseCharacterSheet();
 	void ShowCharacterSheet();
+
+	void ChangeText();
 };
